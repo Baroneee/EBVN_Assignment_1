@@ -13,6 +13,7 @@ import (
 	"github.com/go-playground/assert/v2"
 )
 
+// TestHealthCheck verifies the health check handler response.
 func TestHealthCheck(t *testing.T) {
 	t.Parallel()
 
@@ -51,7 +52,7 @@ func TestHealthCheck(t *testing.T) {
 			healthCheckHandler.Check(ginCtx)
 
 			assert.Equal(t, tc.expectedCode, rec.Code)
-			
+
 			var actualBody service.HealthResponse
 			err := json.Unmarshal(rec.Body.Bytes(), &actualBody)
 			if err != nil {

@@ -6,6 +6,7 @@ import (
 	"github.com/go-playground/assert/v2"
 )
 
+// TestHealthCheck verifies health status creation and instance ID behavior.
 func TestHealthCheck(t *testing.T) {
 	t.Parallel()
 
